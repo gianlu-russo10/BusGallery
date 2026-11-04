@@ -1,183 +1,189 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - BM Driver Aid</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Bus Gallery</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #FF5900;
-      margin: 0;
-      padding: 10px; /* migliora la resa mobile */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      box-sizing: border-box;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #796C6D;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
 
-    /* Barra superiore */
-    .top-bar {
-      background: white;
-      width: 90%;
-      max-width: 900px;
-      margin-top: 40px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        /* Barra superiore */
+        .top-bar {
+            background: white;
+            width: 90%;
+            max-width: 900px;
+            margin-top: 40px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-    .top-bar h2 {
-      margin: 0;
-      font-size: 22px;
-      color: #000000;
-    }
+            text-align: center;
+        }
 
-    /* Box Esci */
-    .logout-box {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border: 2px solid red;
-      border-radius: 8px;
-      cursor: pointer;
-      color: red;
-      font-weight: bold;
-      background: #fff;
-      transition: 0.2s;
-    }
+        .top-bar h2 {
+            margin: 0;
+            font-size: 22px;
+            color: #000;
+        }
 
-    .logout-box:hover {
-      background: #ffe5e5;
-    }
+        .top-bar h4 {
+            margin: 5px 0 0 0;
+            font-weight: normal;
+            color: #444;
+        }
 
-    .logout-box svg {
-      stroke: red;
-    }
+        /* Griglia pulsanti */
+        .menu-grid {
+            width: 90%;
+            max-width: 900px;
+            margin-top: 20px;
 
-    /* Box generico */
-    .line-box {
-      background: white;
-      width: 90%;
-      max-width: 900px;
-      margin-top: 20px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      cursor: pointer;
-    }
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
 
-    .line-box:hover {
-      background: #f7f7f7;
-    }
+        /* Pulsante */
+        .menu-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 
-    .line-box h3 {
-      margin: 0;
-      font-size: 20px;
-      color: #000000;
-    }
+            cursor: pointer;
 
-    .line-box hr {
-      border: none;
-      border-top: 2px solid #000000;
-      margin: 15px 0;
-    }
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
 
-    /* 📱 Ottimizzazione Mobile */
-    @media (max-width: 600px) {
+            transition: 0.2s;
+        }
 
-      .top-bar {
-        padding: 15px;
-      }
+        .menu-item:hover {
+            background: #f7f7f7;
+        }
 
-      .top-bar h2 {
-        font-size: 18px;
-      }
+        .menu-item img {
+            width: 300px;
+            height: 300px;
+            object-fit: contain;
+            margin-bottom: 0px;
+        }
 
-      .top-bar h4 {
-        font-size: 14px;
-      }
+        .menu-item h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+        }
 
-      .logout-box {
-        padding: 6px 10px;
-        font-size: 14px;
-      }
+        .menu-item p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            color: #666;
+        }
 
-      .logout-box svg {
-        width: 16px;
-        height: 16px;
-      }
+        /* Mobile */
+        @media (max-width: 600px) {
 
-      .line-box {
-        padding: 15px;
-      }
+            .top-bar {
+                padding: 15px;
+            }
 
-      .line-box h3 {
-        font-size: 18px;
-      }
-    }
-  </style>
+            .top-bar h2 {
+                font-size: 18px;
+            }
+
+            .top-bar h4 {
+                font-size: 14px;
+            }
+
+            .menu-grid {
+                gap: 12px;
+            }
+
+            .menu-item {
+                padding: 15px;
+            }
+
+            .menu-item img {
+                width: 200px;
+                height: 70px;
+            }
+
+            .menu-item h3 {
+                font-size: 16px;
+            }
+
+            .menu-item p {
+                font-size: 13px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- Barra superiore -->
-  <div class="top-bar">
-    <div>
-      <h2 style="margin: 0;">Bike Mobility - Driver Aid</h2>
-      <h4 style="margin: 5px 0 0 0; font-weight: normal; color: #444;">
-        Benvenuto
-      </h4>
+    <!-- Barra superiore -->
+    <div class="top-bar">
+        <div>
+            <h1>BUS GALLERY</h1>
+            <h4>Gianluca Russo & Friends</h4>
+        </div>
     </div>
 
-    <div class="logout-box" onclick="logout()">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-        <polyline points="16 17 21 12 16 7"></polyline>
-        <line x1="21" y1="12" x2="9" y2="12"></line>
-      </svg>
-      Esci
+    <!-- Griglia pulsanti -->
+    <div class="menu-grid">
+
+        <div class="menu-item" onclick="goToPage('STAR-Mobility.html')">
+            <img src="https://gianlu-russo10.github.io/BusGallery/SM-LogoThumbnail.png" alt="STAR Mobility Logo Thumbnail">
+            <h3>STAR Mobility</h3>
+            <p>LODI - Gruppo Zoncada</p>
+        </div>
+
+        <div class="menu-item" onclick="goToPage('Az2.html')">
+            <img src="img/turni.png" alt="Azienda 2">
+            <h3>*Azienda 2*</h3>
+            <p>*Azienda 2*</p>
+        </div>
+
+        <div class="menu-item" onclick="goToPage('Az3.html')">
+            <img src="img/ods.png" alt="Azienda 3">
+            <h3>*Azienda 3*</h3>
+            <p>*Azienda 3*</p>
+        </div>
+
+        <div class="menu-item" onclick="goToPage('codicidisplay.html')">
+            <img src="img/display.png" alt="Azienda 4">
+            <h3>*Azienda 4*</h3>
+            <p>*Azienda 4*</p>
+        </div>
+
     </div>
-  </div>
 
-
-  <!-- Box Linee -->
-  <div class="line-box" onclick="goToPage('linee.html')">
-    <h3>Linee e fermate</h3>
-  </div>
-
-  <!-- Box Turni Macchina -->
-  <div class="line-box" onclick="goToPage('TurniM.html')">
-    <h3>Turni Macchina</h3>
-  </div>
-
-  <!-- Box Ordini di Servizio -->
-  <div class="line-box" onclick="goToPage('OdS.html')">
-    <h3>Ordini di Servizio</h3>
-  </div>
-
-   <!-- Box Codici Display -->
-  <div class="line-box" onclick="goToPage('codicidisplay.html')">
-    <h3>Codici Display Destinazioni</h3>
-  </div>
-
-  <script>
-    function logout() {
-      window.location.href = "index.html";
-    }
-
-    function goToPage(url) {
-      window.location.href = url;
-    }
-  </script>
+    <script>
+        function goToPage(url) {
+            window.location.href = url;
+        }
+    </script>
 
 </body>
+
 </html>
