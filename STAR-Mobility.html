@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAR Mobility - Bus Gallery</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #796C6D;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Barra superiore */
+        .top-bar {
+            background: white;
+            width: 90%;
+            max-width: 900px;
+            margin-top: 40px;
+            padding: 20px;
+
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+            display: grid;
+            grid-template-columns: 120px 1fr 120px;
+            align-items: center;
+        }
+
+        .title-box {
+            text-align: center;
+        }
+
+        .title-box h2 {
+            margin: 0;
+            font-size: 22px;
+            color: #000;
+        }
+
+        .title-box h4 {
+            margin: 5px 0 0;
+            font-weight: normal;
+            color: #444;
+        }
+
+        /* Pulsante indietro */
+        .back-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            padding: 8px 14px;
+
+            border: 2px solid #444;
+            border-radius: 8px;
+
+            background: white;
+
+            color: #444;
+            font-weight: bold;
+
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .back-box:hover {
+            background: #f0f0f0;
+        }
+
+        /* Griglia */
+        .menu-grid {
+            width: 90%;
+            max-width: 900px;
+            margin-top: 20px;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        /* Pulsanti */
+        .menu-item {
+            background: white;
+            padding: 20px;
+
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+            cursor: pointer;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            transition: .2s;
+        }
+
+        .menu-item:hover {
+            background: #f7f7f7;
+        }
+
+        .menu-item img {
+            width: 200px;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 12px;
+        }
+
+        .menu-item h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .menu-item p {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+
+            .top-bar {
+                padding: 15px;
+                grid-template-columns: 100px 1fr 100px;
+            }
+
+            .title-box h2 {
+                font-size: 18px;
+            }
+
+            .title-box h4 {
+                font-size: 14px;
+            }
+
+            .back-box {
+                padding: 6px 8px;
+                font-size: 13px;
+            }
+
+            .menu-grid {
+                gap: 12px;
+            }
+
+            .menu-item {
+                padding: 15px;
+            }
+
+            .menu-item img {
+                width: 200px;
+                height: 150px;
+            }
+
+            .menu-item h3 {
+                font-size: 16px;
+            }
+
+            .menu-item p {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Barra superiore -->
+    <div class="top-bar">
+
+        <div class="back-box" onclick="history.back()">
+            <svg width="20"
+                 height="20"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            Indietro
+        </div>
+
+        <div class="title-box">
+            <h2>STAR Mobility - Lodi</h2>
+            <h4>Bus Gallery</h4>
+        </div>
+
+        <!-- Spacer destro per mantenere il titolo centrato -->
+        <div></div>
+
+    </div>
+
+    <!-- Griglia pulsanti -->
+    <div class="menu-grid">
+
+        <div class="menu-item" onclick="goToPage('STAR-Mobility/2xxx')">
+            <img src="https://gianlu-russo10.github.io/BusGallery/STAR-Mobility/2xxxThumbnail.jpg" alt="2xxx Thumbnail">
+            <h3>Autobus in allestimento Urbano/Suburbano</h3>
+            <p>Serie 2xxx</p>
+        </div>
+
+        <div class="menu-item" onclick="goToPage('STAR-Mobility/3xxx')">
+            <img src="https://gianlu-russo10.github.io/BusGallery/STAR-Mobility/3xxxThumbnail.jpg" alt="3xxx Thumbnail">
+            <h3>Autosnodati, Autobus a Due Piani ed Extralunghi</h3>
+            <p>Serie 3xxx</p>
+        </div>
+
+        <div class="menu-item" onclick="goToPage('STAR-Mobility/4xxx')">
+            <img src="https://gianlu-russo10.github.io/BusGallery/STAR-Mobility/4xxxThumbnail.jpg" alt="4xxx Thumbnail">
+            <h3>Autobus a Pianale Ribassato in allestimento Interurbano</h3>
+            <p>Serie 4xxx</p>
+        </div>
+
+        <div class="menu-item" onclick="goToPage('STAR-Mobility/5xxx')">
+            <img src="https://gianlu-russo10.github.io/BusGallery/STAR-Mobility/5xxxThumbnail.jpg" alt="5xxx Thumbnail">
+            <h3>Autobus a Pianale Alto in allestimento Interurbano</h3>
+            <p>Serie 5xxx</p>
+        </div>
+        
+        <div class="menu-item" onclick="goToPage('STAR-Mobility/6xxx')">
+            <img src="https://gianlu-russo10.github.io/BusGallery/STAR-Mobility/SM_6901-6002-6001_01_010525.JPG" alt="6xxx Thumbnail">
+            <h3>Autobus a Pianale Alto in allestimento Interurbano</h3>
+            <p>Serie 6xxx</p>
+        </div>
+
+    </div>
+
+    <script>
+        function goToPage(url) {
+            window.location.href = url;
+        }
+    </script>
+
+</body>
+
+</html>
